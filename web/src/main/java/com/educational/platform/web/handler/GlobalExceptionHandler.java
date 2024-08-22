@@ -10,9 +10,10 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
 import java.util.stream.Collectors;
+
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.ConstraintViolation;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {

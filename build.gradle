@@ -15,7 +15,8 @@ subprojects {
 
     group = 'com.educational.platform'
     version = '0.0.1-SNAPSHOT'
-    sourceCompatibility = '11'
+    sourceCompatibility = '21'
+    targetCompatibility = '21'
 
     dependencyManagement {
         imports {

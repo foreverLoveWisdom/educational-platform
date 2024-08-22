@@ -3,10 +3,10 @@ package com.educational.platform.course.reviews.reviewer;
 import com.educational.platform.common.domain.AggregateRoot;
 import com.educational.platform.course.reviews.reviewer.create.CreateReviewerCommand;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 /**
  * Represents Reviewer domain model.

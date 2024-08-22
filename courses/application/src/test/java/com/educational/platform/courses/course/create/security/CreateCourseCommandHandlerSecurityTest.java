@@ -78,6 +78,6 @@ public class CreateCourseCommandHandlerSecurityTest {
 
         // then
         assertThatThrownBy(createAction)
-                .hasRootCauseInstanceOf(AccessDeniedException.class);
+                .isInstanceOf(AccessDeniedException.class);
     }
 }

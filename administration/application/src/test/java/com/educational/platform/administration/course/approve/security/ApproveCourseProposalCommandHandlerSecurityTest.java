@@ -62,7 +62,7 @@ public class ApproveCourseProposalCommandHandlerSecurityTest {
 
         // then
         assertThatThrownBy(publishAction)
-                .hasRootCauseInstanceOf(AccessDeniedException.class);
+                .isInstanceOf(AccessDeniedException.class);
     }
 
     @Test
@@ -76,6 +76,6 @@ public class ApproveCourseProposalCommandHandlerSecurityTest {
 
         // then
         assertThatThrownBy(publishAction)
-                .hasRootCauseInstanceOf(AccessDeniedException.class);
+                .isInstanceOf(AccessDeniedException.class);
     }
 }

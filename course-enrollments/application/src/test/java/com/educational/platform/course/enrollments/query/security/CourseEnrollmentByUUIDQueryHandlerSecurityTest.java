@@ -32,6 +32,6 @@ public class CourseEnrollmentByUUIDQueryHandlerSecurityTest {
 		final ThrowingCallable queryAction = () -> sut.handle(command);
 
 		// then
-		assertThatThrownBy(queryAction).hasRootCauseInstanceOf(AccessDeniedException.class);
+		assertThatThrownBy(queryAction).isInstanceOf(AccessDeniedException.class);
 	}
 }

@@ -1,6 +1,6 @@
 package com.educational.platform.courses.course;
 
-import javax.validation.ConstraintViolationException;
+import jakarta.validation.ConstraintViolationException;
 
 import com.educational.platform.courses.course.create.CreateCurriculumItemCommand;
 import com.educational.platform.courses.course.create.CreateLectureCommand;

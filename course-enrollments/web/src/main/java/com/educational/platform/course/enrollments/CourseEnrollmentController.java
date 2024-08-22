@@ -27,7 +27,7 @@ public class CourseEnrollmentController {
 
     @PostMapping(value = "/courses/{uuid}/course-enrollments", produces = APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public UUID enroll(@PathVariable UUID uuid, @RequestBody CourseEnrollmentRequest request) {
+    public UUID enroll(@PathVariable("uuid") UUID uuid, @RequestBody CourseEnrollmentRequest request) {
         var command = RegisterStudentToCourseCommand.builder()
                 .courseId(uuid)
                 .build();

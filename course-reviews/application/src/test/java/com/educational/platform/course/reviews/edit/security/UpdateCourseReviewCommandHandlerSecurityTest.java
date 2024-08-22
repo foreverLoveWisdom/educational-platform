@@ -67,7 +67,7 @@ public class UpdateCourseReviewCommandHandlerSecurityTest {
 
         // then
         assertThatThrownBy(updateAction)
-                .hasRootCauseInstanceOf(AccessDeniedException.class);
+                .isInstanceOf(AccessDeniedException.class);
     }
 
     @Test
@@ -85,6 +85,6 @@ public class UpdateCourseReviewCommandHandlerSecurityTest {
 
         // then
         assertThatThrownBy(updateAction)
-                .hasRootCauseInstanceOf(AccessDeniedException.class);
+                .isInstanceOf(AccessDeniedException.class);
     }
 }

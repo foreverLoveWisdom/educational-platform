@@ -3,8 +3,8 @@ package com.educational.platform.courses.course;
 import java.util.Optional;
 import java.util.UUID;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 public class CourseRepositoryCustomImpl implements CourseRepositoryCustom {
 
@@ -20,7 +20,7 @@ public class CourseRepositoryCustomImpl implements CourseRepositoryCustom {
 								+ " from com.educational.platform.courses.course.Course course left join course.curriculumItems curriculumItems WHERE course.uuid = :uuid")
 				.setParameter("uuid", uuid)
 				.unwrap(org.hibernate.query.Query.class)
-				.setResultTransformer(new CourseDTOResultTransformer())
+				.setTupleTransformer(new CourseDTOResultTransformer())
 				.getSingleResult();
 
 		return Optional.ofNullable(result);

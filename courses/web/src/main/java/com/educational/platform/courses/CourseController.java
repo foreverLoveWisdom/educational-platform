@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.UUID;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -41,7 +41,7 @@ public class CourseController {
 
     @PutMapping(value = "/{uuid}/publish-status", produces = APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void publish(@PathVariable UUID uuid) {
+    void publish(@PathVariable("uuid") UUID uuid) {
         commandGateway.sendAndWait(new PublishCourseCommand(uuid));
     }
 

@@ -2,7 +2,7 @@ package com.educational.platform.course.enrollments;
 
 import com.educational.platform.common.domain.AggregateRoot;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.UUID;
 
 /**

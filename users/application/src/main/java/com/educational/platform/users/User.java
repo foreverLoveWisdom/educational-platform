@@ -5,16 +5,19 @@ import com.educational.platform.users.registration.UserRegistrationCommand;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.util.Collections;
 
 /**
  * Represents User domain model.
  */
 @Entity
+@Table(name="custom_user")
 public class User implements AggregateRoot {
 
     @Id
@@ -27,7 +30,7 @@ public class User implements AggregateRoot {
     private Role role;
 
     // for JPA
-    private User() {
+    protected User() {
     }
 
     public User(UserRegistrationCommand command, PasswordEncoder passwordEncoder) {

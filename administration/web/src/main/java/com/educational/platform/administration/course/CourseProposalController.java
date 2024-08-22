@@ -32,13 +32,13 @@ public class CourseProposalController {
 
 	@PutMapping(value = "/{uuid}/approval-status", produces = APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void approve(@PathVariable UUID uuid) {
+	public void approve(@PathVariable("uuid") UUID uuid) {
 		commandGateway.sendAndWait(new ApproveCourseProposalCommand(uuid));
 	}
 
 	@DeleteMapping(value = "/{uuid}/approval-status", produces = APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void decline(@PathVariable UUID uuid) {
+	public void decline(@PathVariable("uuid") UUID uuid) {
 		commandGateway.sendAndWait(new DeclineCourseProposalCommand(uuid));
 	}
 

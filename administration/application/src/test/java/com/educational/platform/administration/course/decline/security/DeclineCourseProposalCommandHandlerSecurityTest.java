@@ -62,7 +62,7 @@ public class DeclineCourseProposalCommandHandlerSecurityTest {
 
         // then
         assertThatThrownBy(declineAction)
-                .hasRootCauseInstanceOf(AccessDeniedException.class);
+                .isInstanceOf(AccessDeniedException.class);
     }
 
     @Test
@@ -76,6 +76,6 @@ public class DeclineCourseProposalCommandHandlerSecurityTest {
 
         // then
         assertThatThrownBy(declineAction)
-                .hasRootCauseInstanceOf(AccessDeniedException.class);
+                .isInstanceOf(AccessDeniedException.class);
     }
 }

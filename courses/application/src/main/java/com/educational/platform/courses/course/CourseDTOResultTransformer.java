@@ -6,17 +6,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import org.hibernate.transform.ResultTransformer;
+import org.hibernate.query.TupleTransformer;
 
 /**
  * Represents health indicator config dto result transformer.
  */
-public class CourseDTOResultTransformer implements ResultTransformer {
+public class CourseDTOResultTransformer implements TupleTransformer<CourseDTO> {
 
 	private final Map<UUID, CourseDTO> courseDTOMap = new LinkedHashMap<>();
 
 	@Override
-	public Object transformTuple(
+	public CourseDTO transformTuple(
 			Object[] tuple, String[] aliases
 	) {
 
@@ -47,10 +47,5 @@ public class CourseDTOResultTransformer implements ResultTransformer {
 		}
 
 		return aliasToIndexMap;
-	}
-
-	@Override
-	public List<CourseDTO> transformList(List collection) {
-		return new ArrayList<>(courseDTOMap.values());
 	}
 }

@@ -37,7 +37,7 @@ public class ListCourseProposalsQueryHandlerSecurityTest {
 		final ThrowingCallable queryAction = () -> sut.handle(query);
 
 		// then
-		assertThatThrownBy(queryAction).hasRootCauseInstanceOf(AccessDeniedException.class);
+		assertThatThrownBy(queryAction).isInstanceOf(AccessDeniedException.class);
 	}
 
 	@Test
@@ -50,7 +50,7 @@ public class ListCourseProposalsQueryHandlerSecurityTest {
 		final ThrowingCallable queryAction = () -> sut.handle(query);
 
 		// then
-		assertThatThrownBy(queryAction).hasRootCauseInstanceOf(AccessDeniedException.class);
+		assertThatThrownBy(queryAction).isInstanceOf(AccessDeniedException.class);
 	}
 
 	@Test

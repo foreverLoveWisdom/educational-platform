@@ -5,7 +5,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import java.util.List;
 import java.util.UUID;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
@@ -39,7 +39,7 @@ public class CourseReviewController {
 
 	@PostMapping(value = "/courses/{uuid}/reviews", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)
-	public CourseReviewCreatedResponse review(@PathVariable UUID uuid, @RequestBody @Valid ReviewCourseRequest request) {
+	public CourseReviewCreatedResponse review(@PathVariable("uuid") UUID uuid, @RequestBody @Valid ReviewCourseRequest request) {
 		final ReviewCourseCommand command = ReviewCourseCommand
 				.builder()
 				.courseId(uuid)
@@ -52,7 +52,7 @@ public class CourseReviewController {
 
 	@GetMapping(value = "/courses/{uuid}/reviews", produces = APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
-	public List<CourseReviewDTO> reviews(@PathVariable UUID uuid) {
+	public List<CourseReviewDTO> reviews(@PathVariable("uuid") UUID uuid) {
 		final ListCourseReviewsByCourseUUIDQuery query = new ListCourseReviewsByCourseUUIDQuery(uuid);
 
 		return queryGateway.query(query, ResponseTypes.multipleInstancesOf(CourseReviewDTO.class)).join();
@@ -60,7 +60,7 @@ public class CourseReviewController {
 
 	@PutMapping(value = "/courses/{courseUuid}/reviews/{reviewUuid}", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void updateReview(@PathVariable UUID courseUuid, @PathVariable UUID reviewUuid, @RequestBody @Valid UpdateCourseReviewRequest request) {
+	public void updateReview(@PathVariable("courseUuid") UUID courseUuid, @PathVariable("reviewUuid") UUID reviewUuid, @RequestBody @Valid UpdateCourseReviewRequest request) {
 		final UpdateCourseReviewCommand command = UpdateCourseReviewCommand
 				.builder()
 				.uuid(reviewUuid)

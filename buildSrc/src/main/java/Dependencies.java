@@ -1,12 +1,13 @@
 interface Versions {
-	String spring = "2.3.4.RELEASE";
-	String restAssured = "4.2.0";
-	String mockito = "3.6.0";
-	String assertj = "3.18.0";
+	String spring = "3.3.0";
+	String restAssured = "5.5.0";
+	String mockito = "5.12.0";
+	String assertj = "3.26.3";
 	String archunit = "0.14.1";
-	String axon = "4.4.3";
+	String axon = "4.10.0";
 	String swagger = "3.0.0";
-	String lombok = "1.18.16";
+	String lombok = "1.18.32";
 	String jsonwebtoken = "0.9.1";
-	String passay = "1.6.0";
+	String jaxbApi = "2.3.1";
+	String passay = "1.6.4";
 }

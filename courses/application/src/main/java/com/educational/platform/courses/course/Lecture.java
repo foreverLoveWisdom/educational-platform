@@ -1,7 +1,7 @@
 package com.educational.platform.courses.course;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
 
 import com.educational.platform.courses.course.create.CreateLectureCommand;
 

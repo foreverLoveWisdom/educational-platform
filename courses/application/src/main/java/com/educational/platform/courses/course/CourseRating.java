@@ -3,7 +3,7 @@ package com.educational.platform.courses.course;
 import com.educational.platform.common.domain.ValueObject;
 import lombok.*;
 
-import javax.persistence.Embeddable;
+import jakarta.persistence.Embeddable;
 
 /**
  * Represents Course Rating model.

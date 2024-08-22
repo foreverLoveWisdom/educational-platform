@@ -3,8 +3,14 @@ package com.educational.platform.administration.course;
 import com.educational.platform.administration.course.create.CreateCourseProposalCommand;
 import com.educational.platform.common.domain.AggregateRoot;
 
-import javax.persistence.*;
 import java.util.UUID;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 /**
  * Represents Course Proposal domain model.

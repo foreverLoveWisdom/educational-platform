@@ -1,6 +1,6 @@
 package com.educational.platform.users.security;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import com.educational.platform.users.login.SignInCommand;
 
