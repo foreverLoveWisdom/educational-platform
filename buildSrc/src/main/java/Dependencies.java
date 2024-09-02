@@ -10,4 +10,5 @@ interface Versions {
 	String jsonwebtoken = "0.9.1";
 	String jaxbApi = "2.3.1";
 	String passay = "1.6.4";
+	String springDependencyManagementPlugin = "1.1.6";
 }
